@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Quickstart: Creating Charts
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/RProvider/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="/RProvider/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="/RProvider/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="/RProvider/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <a href="/RProvider/"><img id="fsdocs-logo" src="/RProvider/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="{{fsdocs-license-link}}">License</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="{{fsdocs-release-notes-link}}">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="{{fsdocs-repository-link}}">Source Repository</a></li>
+                <li class="nav-header">
+  Documentation
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/RProvider/tutorial.html">
+    R Provider Tutorial
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/RProvider/Charts-QuickStart.html">
+    Quickstart: Creating Charts
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/RProvider/howto.html">
+    How to
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/RProvider/passing-data.html">
+    Passing Data Between F# and R
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/RProvider/Statistics-QuickStart.html">
+    Quickstart: Using Statistical Packages
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/RProvider/whatwhy.html">
+    Whats and Whys
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/RProvider/mac-and-linux.html">
+    Using R provider on Mac and Linux
+
+  </a>
+</li>             
+<li class="nav-header">
+  Developer
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/RProvider/devnotes.html">
+    Developer notes
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/RProvider/internals.html">
+    How does it work?
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/RProvider/plugins.html">
+    Plugins
+
+  </a>
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/RProvider/diagnostics.html">
+    Diagnostics and debugging
+
+  </a>
+</li>             
+<li class="nav-header">
+  Other
+</li>             
+<li class="nav-item">
+  <a class="nav-link" href="/RProvider/reading-rdata.html">
+    Reading and writing RData files
+
+  </a>
+</li>
+                {{fsdocs-list-of-namespaces}}
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="/RProvider/">RProvider</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            
+<h1><a name="Quickstart-Creating-Charts" class="anchor" href="#Quickstart-Creating-Charts">Quickstart: Creating Charts</a></h1>
+<p>One of the compelling features of R is its ability to create beautiful charts.
+With the R Type Provider, you can use all of R capabilities from F#,
+and create simple charts quickly to explore and visualize your data on-the-fly,
+as well as generate publication quality graphics that can be exported to virtually any format.</p>
+<h2><a name="Charts-Basics" class="anchor" href="#Charts-Basics">Charts Basics</a></h2>
+<p>Basic charts can be found in the graphics package.
+Assuming you installed the R Type Provider in your project from NuGet,
+you can reference the required libraries and packages this way:</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="c">// #I &quot;../packages/RProvider.1.0.11&quot;</span>
+<span class="c">// #load &quot;RProvider.fsx&quot;</span>
+
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="id">System</span>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="id">RDotNet</span>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="id">RProvider</span>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="id">RProvider</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 5)" onmouseover="showTip(event, 'fs5', 5)" class="id">graphics</span>
+</code></pre>
+<p>Once the libraries and packages have been loaded,
+producing basic charts is as simple as this:</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs6', 6)" onmouseover="showTip(event, 'fs6', 6)" class="id">widgets</span> <span class="o">=</span> <span class="pn">[</span> <span class="n">3</span><span class="pn">;</span> <span class="n">8</span><span class="pn">;</span> <span class="n">12</span><span class="pn">;</span> <span class="n">15</span><span class="pn">;</span> <span class="n">19</span><span class="pn">;</span> <span class="n">18</span><span class="pn">;</span> <span class="n">18</span><span class="pn">;</span> <span class="n">20</span><span class="pn">;</span> <span class="pn">]</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs7', 7)" onmouseover="showTip(event, 'fs7', 7)" class="id">sprockets</span> <span class="o">=</span> <span class="pn">[</span> <span class="n">5</span><span class="pn">;</span> <span class="n">4</span><span class="pn">;</span> <span class="n">6</span><span class="pn">;</span> <span class="n">7</span><span class="pn">;</span> <span class="n">12</span><span class="pn">;</span> <span class="n">9</span><span class="pn">;</span> <span class="n">5</span><span class="pn">;</span> <span class="n">6</span><span class="pn">;</span> <span class="pn">]</span>
+
+<span onmouseout="hideTip(event, 'fs8', 8)" onmouseover="showTip(event, 'fs8', 8)" class="rt">R</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 9)" onmouseover="showTip(event, 'fs9', 9)" class="id">plot</span><span class="pn">(</span><span onmouseout="hideTip(event, 'fs6', 10)" onmouseover="showTip(event, 'fs6', 10)" class="id">widgets</span><span class="pn">)</span>
+
+<span onmouseout="hideTip(event, 'fs8', 11)" onmouseover="showTip(event, 'fs8', 11)" class="rt">R</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 12)" onmouseover="showTip(event, 'fs9', 12)" class="id">plot</span><span class="pn">(</span><span onmouseout="hideTip(event, 'fs6', 13)" onmouseover="showTip(event, 'fs6', 13)" class="id">widgets</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs7', 14)" onmouseover="showTip(event, 'fs7', 14)" class="id">sprockets</span><span class="pn">)</span>
+
+<span onmouseout="hideTip(event, 'fs8', 15)" onmouseover="showTip(event, 'fs8', 15)" class="rt">R</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs10', 16)" onmouseover="showTip(event, 'fs10', 16)" class="id">barplot</span><span class="pn">(</span><span onmouseout="hideTip(event, 'fs6', 17)" onmouseover="showTip(event, 'fs6', 17)" class="id">widgets</span><span class="pn">)</span>
+
+<span onmouseout="hideTip(event, 'fs8', 18)" onmouseover="showTip(event, 'fs8', 18)" class="rt">R</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs11', 19)" onmouseover="showTip(event, 'fs11', 19)" class="id">hist</span><span class="pn">(</span><span onmouseout="hideTip(event, 'fs7', 20)" onmouseover="showTip(event, 'fs7', 20)" class="id">sprockets</span><span class="pn">)</span>
+
+<span onmouseout="hideTip(event, 'fs8', 21)" onmouseover="showTip(event, 'fs8', 21)" class="rt">R</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs12', 22)" onmouseover="showTip(event, 'fs12', 22)" class="id">pie</span><span class="pn">(</span><span onmouseout="hideTip(event, 'fs6', 23)" onmouseover="showTip(event, 'fs6', 23)" class="id">widgets</span><span class="pn">)</span>
+</code></pre>
+<h2><a name="Exporting-and-Saving-Charts" class="anchor" href="#Exporting-and-Saving-Charts">Exporting and Saving Charts</a></h2>
+<p>Charts can be exported and saved to various formats;
+once you have opened the grDevices package, you can save a chart like this:</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="c">// Required package to save charts</span>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs4', 24)" onmouseover="showTip(event, 'fs4', 24)" class="id">RProvider</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs13', 25)" onmouseover="showTip(event, 'fs13', 25)" class="id">grDevices</span>
+
+<span class="c">// Create path to an image testimage.png on the Desktop</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs14', 26)" onmouseover="showTip(event, 'fs14', 26)" class="id">desktop</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs15', 27)" onmouseover="showTip(event, 'fs15', 27)" class="rt">Environment</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs16', 28)" onmouseover="showTip(event, 'fs16', 28)" class="id">GetFolderPath</span><span class="pn">(</span><span onmouseout="hideTip(event, 'fs15', 29)" onmouseover="showTip(event, 'fs15', 29)" class="rt">Environment</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs17', 30)" onmouseover="showTip(event, 'fs17', 30)" class="en">SpecialFolder</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs18', 31)" onmouseover="showTip(event, 'fs18', 31)" class="id">Desktop</span><span class="pn">)</span>  
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs19', 32)" onmouseover="showTip(event, 'fs19', 32)" class="id">path</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs14', 33)" onmouseover="showTip(event, 'fs14', 33)" class="id">desktop</span> <span class="o">+</span> <span class="s">@&quot;\testimage.png&quot;</span>
+
+<span class="c">// Open the device and create the file as a png.</span>
+<span class="c">// R.bmp, R.jpeg, R.pdf, ... will generate other formats.</span>
+<span onmouseout="hideTip(event, 'fs20', 34)" onmouseover="showTip(event, 'fs20', 34)" class="rt">R</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs21', 35)" onmouseover="showTip(event, 'fs21', 35)" class="id">png</span><span class="pn">(</span><span class="fn">filename</span><span class="o">=</span><span onmouseout="hideTip(event, 'fs19', 36)" onmouseover="showTip(event, 'fs19', 36)" class="id">path</span><span class="pn">,</span> <span class="fn">height</span><span class="o">=</span><span class="n">200</span><span class="pn">,</span> <span class="fn">width</span><span class="o">=</span><span class="n">300</span><span class="pn">,</span> <span class="fn">bg</span><span class="o">=</span><span class="s">&quot;white&quot;</span><span class="pn">)</span>
+<span class="c">// Create the chart into the file</span>
+<span onmouseout="hideTip(event, 'fs8', 37)" onmouseover="showTip(event, 'fs8', 37)" class="rt">R</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs10', 38)" onmouseover="showTip(event, 'fs10', 38)" class="id">barplot</span><span class="pn">(</span><span onmouseout="hideTip(event, 'fs6', 39)" onmouseover="showTip(event, 'fs6', 39)" class="id">widgets</span><span class="pn">)</span>
+<span class="c">// Close the device once the chart is complete</span>
+<span onmouseout="hideTip(event, 'fs20', 40)" onmouseover="showTip(event, 'fs20', 40)" class="rt">R</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs22', 41)" onmouseover="showTip(event, 'fs22', 41)" class="id">dev_off</span> <span class="pn">(</span><span class="pn">)</span>
+</code></pre>
+<h2><a name="Advanced-Charts-Options" class="anchor" href="#Advanced-Charts-Options">Advanced Charts Options</a></h2>
+<p>The graphic functions exposed by the R Type Provider come in two flavors;
+they either have optional named arguments,
+followed by a ParamArray for extended arguments,
+or they take named parameters, an IDictionary<string,object>
+which contains all the arguments passed to the function.</p>
+<h3><a name="Named-Arguments" class="anchor" href="#Named-Arguments">Named Arguments</a></h3>
+<p>Consider for instance the following example:</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs8', 42)" onmouseover="showTip(event, 'fs8', 42)" class="rt">R</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs10', 43)" onmouseover="showTip(event, 'fs10', 43)" class="id">barplot</span><span class="pn">(</span><span onmouseout="hideTip(event, 'fs6', 44)" onmouseover="showTip(event, 'fs6', 44)" class="id">widgets</span><span class="pn">)</span>
+<span onmouseout="hideTip(event, 'fs8', 45)" onmouseover="showTip(event, 'fs8', 45)" class="rt">R</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs23', 46)" onmouseover="showTip(event, 'fs23', 46)" class="id">title</span><span class="pn">(</span><span class="fn">main</span><span class="o">=</span><span class="s">&quot;Widgets&quot;</span><span class="pn">,</span> <span class="fn">xlab</span><span class="o">=</span><span class="s">&quot;Period&quot;</span><span class="pn">,</span> <span class="fn">ylab</span><span class="o">=</span><span class="s">&quot;Quantity&quot;</span><span class="pn">)</span>
+</code></pre>
+<p>R.title has 2 signatures, one of them with optional arguments,
+demonstrated above to set the main title as well as the labels for the x and y axis,
+ignoring some of the other available options.
+You can see another example in the previous section in the R.png call.</p>
+<h3><a name="Named-Parameters" class="anchor" href="#Named-Parameters">Named Parameters</a></h3>
+<p>Named parameters allow you to specify every argument supported by R,
+as an IDictionary of string, object.
+The string is the name of the argument, and the object its value.</p>
+<p>Finding the available arguments for a R function can be tricky;
+the full list of arguments can usually be found in the
+<a href="http://stat.ethz.ch/R-manual/R-devel/library/">R developer documentation</a>,
+navigating in the correct package. For instance, R.plot belongs to
+graphics, and can be found
+<a href="http://stat.ethz.ch/R-manual/R-devel/library/graphics/html/plot.html">here</a>.</p>
+<p>The easiest way to use that feature is to
+leverage the built-in function namedParams, like in this example:</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs8', 47)" onmouseover="showTip(event, 'fs8', 47)" class="rt">R</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 48)" onmouseover="showTip(event, 'fs9', 48)" class="id">plot</span><span class="pn">(</span>
+    <span onmouseout="hideTip(event, 'fs24', 49)" onmouseover="showTip(event, 'fs24', 49)" class="fn">namedParams</span> <span class="pn">[</span>   
+        <span class="s">&quot;x&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 50)" onmouseover="showTip(event, 'fs25', 50)" class="fn">box</span> <span onmouseout="hideTip(event, 'fs6', 51)" onmouseover="showTip(event, 'fs6', 51)" class="id">widgets</span><span class="pn">;</span> 
+        <span class="s">&quot;type&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 52)" onmouseover="showTip(event, 'fs25', 52)" class="fn">box</span> <span class="s">&quot;o&quot;</span><span class="pn">;</span> 
+        <span class="s">&quot;col&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 53)" onmouseover="showTip(event, 'fs25', 53)" class="fn">box</span> <span class="s">&quot;blue&quot;</span><span class="pn">;</span>
+        <span class="s">&quot;ylim&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 54)" onmouseover="showTip(event, 'fs25', 54)" class="fn">box</span> <span class="pn">[</span><span class="n">0</span><span class="pn">;</span> <span class="n">25</span><span class="pn">]</span> <span class="pn">]</span><span class="pn">)</span>
+
+<span onmouseout="hideTip(event, 'fs8', 55)" onmouseover="showTip(event, 'fs8', 55)" class="rt">R</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs26', 56)" onmouseover="showTip(event, 'fs26', 56)" class="id">lines</span><span class="pn">(</span>
+    <span onmouseout="hideTip(event, 'fs24', 57)" onmouseover="showTip(event, 'fs24', 57)" class="fn">namedParams</span> <span class="pn">[</span>   
+        <span class="s">&quot;x&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 58)" onmouseover="showTip(event, 'fs25', 58)" class="fn">box</span> <span onmouseout="hideTip(event, 'fs7', 59)" onmouseover="showTip(event, 'fs7', 59)" class="id">sprockets</span><span class="pn">;</span> 
+        <span class="s">&quot;type&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 60)" onmouseover="showTip(event, 'fs25', 60)" class="fn">box</span> <span class="s">&quot;o&quot;</span><span class="pn">;</span> 
+        <span class="s">&quot;pch&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 61)" onmouseover="showTip(event, 'fs25', 61)" class="fn">box</span> <span class="n">22</span><span class="pn">;</span>
+        <span class="s">&quot;lty&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 62)" onmouseover="showTip(event, 'fs25', 62)" class="fn">box</span> <span class="n">2</span><span class="pn">;</span>
+        <span class="s">&quot;col&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 63)" onmouseover="showTip(event, 'fs25', 63)" class="fn">box</span> <span class="s">&quot;red&quot;</span> <span class="pn">]</span><span class="pn">)</span>
+</code></pre>
+<p>The first call specifies what to plot (widgets),
+what type of line to use, the color, and the scale of the axis.
+The second call adds sprockets, specifying lty (the line type),
+and pch (the plotting character).</p>
+<p>box is used to reduce all elements to objects,
+so that the lists have consistent types.</p>
+<p>A possibly more elegant way to use namedParams is to follow the pattern below:</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs24', 64)" onmouseover="showTip(event, 'fs24', 64)" class="fn">namedParams</span> <span class="pn">[</span>   
+    <span class="s">&quot;x&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 65)" onmouseover="showTip(event, 'fs25', 65)" class="fn">box</span> <span onmouseout="hideTip(event, 'fs6', 66)" onmouseover="showTip(event, 'fs6', 66)" class="id">widgets</span><span class="pn">;</span> 
+    <span class="s">&quot;type&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 67)" onmouseover="showTip(event, 'fs25', 67)" class="fn">box</span> <span class="s">&quot;o&quot;</span><span class="pn">;</span> 
+    <span class="s">&quot;col&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 68)" onmouseover="showTip(event, 'fs25', 68)" class="fn">box</span> <span class="s">&quot;blue&quot;</span><span class="pn">;</span>
+    <span class="s">&quot;ylim&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 69)" onmouseover="showTip(event, 'fs25', 69)" class="fn">box</span> <span class="pn">[</span><span class="n">0</span><span class="pn">;</span> <span class="n">25</span><span class="pn">]</span> <span class="pn">]</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs8', 70)" onmouseover="showTip(event, 'fs8', 70)" class="rt">R</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs9', 71)" onmouseover="showTip(event, 'fs9', 71)" class="id">plot</span>
+
+<span onmouseout="hideTip(event, 'fs24', 72)" onmouseover="showTip(event, 'fs24', 72)" class="fn">namedParams</span> <span class="pn">[</span>   
+    <span class="s">&quot;x&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 73)" onmouseover="showTip(event, 'fs25', 73)" class="fn">box</span> <span onmouseout="hideTip(event, 'fs7', 74)" onmouseover="showTip(event, 'fs7', 74)" class="id">sprockets</span><span class="pn">;</span> 
+    <span class="s">&quot;type&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 75)" onmouseover="showTip(event, 'fs25', 75)" class="fn">box</span> <span class="s">&quot;o&quot;</span><span class="pn">;</span> 
+    <span class="s">&quot;pch&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 76)" onmouseover="showTip(event, 'fs25', 76)" class="fn">box</span> <span class="n">22</span><span class="pn">;</span>
+    <span class="s">&quot;lty&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 77)" onmouseover="showTip(event, 'fs25', 77)" class="fn">box</span> <span class="n">2</span><span class="pn">;</span>
+    <span class="s">&quot;col&quot;</span><span class="pn">,</span> <span onmouseout="hideTip(event, 'fs25', 78)" onmouseover="showTip(event, 'fs25', 78)" class="fn">box</span> <span class="s">&quot;red&quot;</span> <span class="pn">]</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs8', 79)" onmouseover="showTip(event, 'fs8', 79)" class="rt">R</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs26', 80)" onmouseover="showTip(event, 'fs26', 80)" class="id">lines</span>
+</code></pre>
+
+            <div class="fsdocs-tip" id="fs1">namespace System</div>
+<div class="fsdocs-tip" id="fs2">namespace RDotNet</div>
+<div class="fsdocs-tip" id="fs3">namespace RProvider</div>
+<div class="fsdocs-tip" id="fs4">Multiple items<br />namespace RProvider<br /><br />--------------------<br />type RProvider =
+  inherit TypeProviderForNamespaces
+  new : cfg:TypeProviderConfig -&gt; RProvider<br /><br />--------------------<br />new : cfg:CompilerServices.TypeProviderConfig -&gt; RProvider</div>
+<div class="fsdocs-tip" id="fs5">namespace RProvider.graphics</div>
+<div class="fsdocs-tip" id="fs6">val widgets : int list</div>
+<div class="fsdocs-tip" id="fs7">val sprockets : int list</div>
+<div class="fsdocs-tip" id="fs8">type R =
+  static member Axis :?x: obj *?at: obj *?___: obj *?side: obj *?labels: obj *?paramArray: obj [] -&gt; SymbolicExpression + 1 overload
+  static member abline :?a: obj *?b: obj *?h: obj *?v: obj *?reg: obj *?coef: obj *?untf: obj *?___: obj *?paramArray: obj [] -&gt; SymbolicExpression + 1 overload
+  static member arrows :?x0: obj *?y0: obj *?x1: obj *?y1: obj *?length: obj *?angle: obj *?code: obj *?col: obj *?lty: obj *?lwd: obj *?___: obj *?paramArray: obj [] -&gt; SymbolicExpression + 1 overload
+  static member assocplot :?x: obj *?col: obj *?space: obj *?main: obj *?xlab: obj *?ylab: obj -&gt; SymbolicExpression + 1 overload
+  static member axTicks :?side: obj *?axp: obj *?usr: obj *?log: obj *?nintLog: obj -&gt; SymbolicExpression + 1 overload
+  static member axis :?side: obj *?at: obj *?labels: obj *?tick: obj *?line: obj *?pos: obj *?outer: obj *?font: obj *?lty: obj *?lwd: obj *?lwd_ticks: obj *?col: obj *?col_ticks: obj *?hadj: obj *?padj: obj *?gap_axis: obj *?___: obj *?paramArray: obj [] -&gt; SymbolicExpression + 1 overload
+  static member axis_Date :?side: obj *?x: obj *?at: obj *?format: obj *?labels: obj *?___: obj *?paramArray: obj [] -&gt; SymbolicExpression + 1 overload
+  static member axis_POSIXct :?side: obj *?x: obj *?at: obj *?format: obj *?labels: obj *?___: obj *?paramArray: obj [] -&gt; SymbolicExpression + 1 overload
+  static member barplot :?height: obj *?___: obj *?paramArray: obj [] -&gt; SymbolicExpression + 1 overload
+  static member barplot_default :?height: obj *?width: obj *?space: obj *?names_arg: obj *?legend_text: obj *?beside: obj *?horiz: obj *?density: obj *?angle: obj *?col: obj *?border: obj *?main: obj *?sub: obj *?xlab: obj *?ylab: obj *?xlim: obj *?ylim: obj *?xpd: obj *?log: obj *?axes: obj *?axisnames: obj *?cex_axis: obj *?cex_names: obj *?inside: obj *?plot: obj *?axis_lty: obj *?offset: obj *?add: obj *?ann: obj *?args_legend: obj *?___: obj *?paramArray: obj [] -&gt; SymbolicExpression + 1 overload
+  ...<br /><em>R functions for base graphics.</em></div>
+<div class="fsdocs-tip" id="fs9">Multiple items<br />R.plot(paramsByName: Collections.Generic.IDictionary&lt;string,obj&gt;) : SymbolicExpression<br />R.plot(?x: obj,?y: obj,?___: obj,?paramArray: obj []) : SymbolicExpression<br /><em>No documentation available</em><br /><br />--------------------<br />R.plot(paramsByName: Collections.Generic.IDictionary&lt;string,obj&gt;) : SymbolicExpression<br />R.plot(?x: obj,?y: obj,?___: obj,?paramArray: obj []) : SymbolicExpression<br /><em>Generic X-Y Plotting</em></div>
+<div class="fsdocs-tip" id="fs10">R.barplot(paramsByName: Collections.Generic.IDictionary&lt;string,obj&gt;) : SymbolicExpression<br />R.barplot(?height: obj,?___: obj,?paramArray: obj []) : SymbolicExpression<br /><em>Bar Plots</em></div>
+<div class="fsdocs-tip" id="fs11">R.hist(paramsByName: Collections.Generic.IDictionary&lt;string,obj&gt;) : SymbolicExpression<br />R.hist(?x: obj,?___: obj,?paramArray: obj []) : SymbolicExpression<br /><em>Histograms</em></div>
+<div class="fsdocs-tip" id="fs12">R.pie(paramsByName: Collections.Generic.IDictionary&lt;string,obj&gt;) : SymbolicExpression<br />R.pie(?x: obj,?labels: obj,?edges: obj,?radius: obj,?clockwise: obj,?init_angle: obj,?density: obj,?angle: obj,?col: obj,?border: obj,?lty: obj,?main: obj,?___: obj,?paramArray: obj []) : SymbolicExpression<br /><em>Pie Charts</em></div>
+<div class="fsdocs-tip" id="fs13">namespace RProvider.grDevices</div>
+<div class="fsdocs-tip" id="fs14">val desktop : string</div>
+<div class="fsdocs-tip" id="fs15">type Environment =
+  static member Exit : exitCode: int -&gt; unit
+  static member ExpandEnvironmentVariables : name: string -&gt; string
+  static member FailFast : message: string -&gt; unit + 1 overload
+  static member GetCommandLineArgs : unit -&gt; string []
+  static member GetEnvironmentVariable : variable: string -&gt; string + 1 overload
+  static member GetEnvironmentVariables : unit -&gt; IDictionary + 1 overload
+  static member GetFolderPath : folder: SpecialFolder -&gt; string + 1 overload
+  static member GetLogicalDrives : unit -&gt; string []
+  static member SetEnvironmentVariable : variable: string * value: string -&gt; unit + 1 overload
+  static member CommandLine : string
+  ...<br /><em>&lt;summary&gt;Provides information about, and means to manipulate, the current environment and platform. This class cannot be inherited.&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs16">Environment.GetFolderPath(folder: Environment.SpecialFolder) : string<br />Environment.GetFolderPath(folder: Environment.SpecialFolder, option: Environment.SpecialFolderOption) : string</div>
+<div class="fsdocs-tip" id="fs17">type SpecialFolder =
+  | Desktop = 0
+  | Programs = 2
+  | MyDocuments = 5
+  | Personal = 5
+  | Favorites = 6
+  | Startup = 7
+  | Recent = 8
+  | SendTo = 9
+  | StartMenu = 11
+  | MyMusic = 13
+  ...<br /><em>&lt;summary&gt;Specifies enumerated constants used to retrieve directory paths to system special folders.&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs18">field Environment.SpecialFolder.Desktop: Environment.SpecialFolder = 0<br /><em>&lt;summary&gt;The logical Desktop rather than the physical file system location.&lt;/summary&gt;</em></div>
+<div class="fsdocs-tip" id="fs19">val path : string</div>
+<div class="fsdocs-tip" id="fs20">type R =
+  static member CIDFont :?family: obj *?cmap: obj *?cmapEncoding: obj *?pdfresource: obj -&gt; SymbolicExpression + 1 overload
+  static member Type1Font :?family: obj *?metrics: obj *?encoding: obj -&gt; SymbolicExpression + 1 overload
+  static member X11 :?display: obj *?width: obj *?height: obj *?pointsize: obj *?gamma: obj *?bg: obj *?canvas: obj *?fonts: obj *?family: obj *?xpos: obj *?ypos: obj *?title: obj *?type: obj *?antialias: obj *?symbolfamily: obj -&gt; SymbolicExpression + 1 overload
+  static member X11Font :?font: obj -&gt; SymbolicExpression + 1 overload
+  static member X11Fonts :?___: obj *?paramArray: obj [] -&gt; SymbolicExpression + 1 overload
+  static member X11_options :?___: obj *?reset: obj *?paramArray: obj [] -&gt; SymbolicExpression + 1 overload
+  static member adjustcolor :?col: obj *?alpha_f: obj *?red_f: obj *?green_f: obj *?blue_f: obj *?offset: obj *?transform: obj -&gt; SymbolicExpression + 1 overload
+  static member as_graphicsAnnot :?x: obj -&gt; SymbolicExpression + 1 overload
+  static member as_raster :?x: obj *?___: obj *?paramArray: obj [] -&gt; SymbolicExpression + 1 overload
+  static member axisTicks :?usr: obj *?log: obj *?axp: obj *?nint: obj -&gt; SymbolicExpression + 1 overload
+  ...<br /><em>Graphics devices and support for base and grid graphics.</em></div>
+<div class="fsdocs-tip" id="fs21">R.png(paramsByName: Collections.Generic.IDictionary&lt;string,obj&gt;) : SymbolicExpression<br />R.png(?filename: obj,?width: obj,?height: obj,?units: obj,?pointsize: obj,?bg: obj,?res: obj,?___: obj,?type: obj,?antialias: obj,?paramArray: obj []) : SymbolicExpression<br /><em>BMP, JPEG, PNG and TIFF graphics devices</em></div>
+<div class="fsdocs-tip" id="fs22">R.dev_off(paramsByName: Collections.Generic.IDictionary&lt;string,obj&gt;) : SymbolicExpression<br />R.dev_off(?which: obj) : SymbolicExpression<br /><em>No documentation available</em></div>
+<div class="fsdocs-tip" id="fs23">R.title(paramsByName: Collections.Generic.IDictionary&lt;string,obj&gt;) : SymbolicExpression<br />R.title(?main: obj,?sub: obj,?xlab: obj,?ylab: obj,?line: obj,?outer: obj,?___: obj,?paramArray: obj []) : SymbolicExpression<br /><em>Plot Annotation</em></div>
+<div class="fsdocs-tip" id="fs24">val namedParams : s:seq&lt;string * &#39;a&gt; -&gt; Collections.Generic.IDictionary&lt;string,obj&gt;</div>
+<div class="fsdocs-tip" id="fs25">val box : value:&#39;T -&gt; obj<br /><em>&lt;summary&gt;Boxes a strongly typed value.&lt;/summary&gt;<br />&lt;param name=&quot;value&quot;&gt;The value to box.&lt;/param&gt;<br />&lt;returns&gt;The boxed object.&lt;/returns&gt;</em></div>
+<div class="fsdocs-tip" id="fs26">R.lines(paramsByName: Collections.Generic.IDictionary&lt;string,obj&gt;) : SymbolicExpression<br />R.lines(?x: obj,?___: obj,?paramArray: obj []) : SymbolicExpression<br /><em>Add Connected Line Segments to a Plot</em></div>
+
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = '/RProvider/';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="/RProvider/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
